@@ -5,7 +5,7 @@ Form::Form(): name("Default Form"), is_signed(false), grade_s(75), grade_e(50)
     std::cout << "Form: Default Constructor\n";
 }
 
-Form::Form(const std::string &n, const short gs, const short ge): name(n), is_signed(false), grade_e(ge), grade_s(gs)
+Form::Form(const std::string &n, const short gs, const short ge): name(n), is_signed(false), grade_s(gs), grade_e(ge)
 {
     if (gs < 1 || ge < 1)
         throw Form::GradeTooHighException();
@@ -14,7 +14,7 @@ Form::Form(const std::string &n, const short gs, const short ge): name(n), is_si
     std::cout << "Form: Parameterized Constructor\n";
 }
 
-Form::Form(const Form &o): name(o.name), grade_e(o.grade_e), grade_s(o.grade_s)
+Form::Form(const Form &o): name(o.name), grade_s(o.grade_s), grade_e(o.grade_e)
 {
     is_signed = o.is_signed;
     std::cout << "Form: Copy Constructor\n";

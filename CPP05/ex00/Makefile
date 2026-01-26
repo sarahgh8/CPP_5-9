@@ -1,6 +1,6 @@
-CPP = c++
+CXX = c++
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Bureaucrat.cpp
 
@@ -11,7 +11,7 @@ NAME = bureaucrat
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 clean:
 	rm -f $(OBJ)
 
