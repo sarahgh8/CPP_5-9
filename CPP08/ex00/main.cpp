@@ -15,6 +15,16 @@ void print_result(T &container, int value)
     }
     std::cout << value << " found" << std::endl;
 }
+template <typename T>
+void print_cont(const T &cont)
+{
+    typename T::const_iterator it = cont.begin();
+    typename T::const_iterator end = cont.end();
+
+    for (; it != end; ++it)
+        std::cout << *it << ' ';
+    std::cout << std::endl;
+}
 
 int main()
 {
@@ -26,6 +36,13 @@ int main()
         values.push_back(i * 10);
         numbers.push_back(i + 1);
     }
+
+    std::cout << "values:"; 
+    print_cont(values);
+    std::cout << std::endl;
+    std::cout << "numbers:"; 
+    print_cont(numbers);
+    std::cout << std::endl;
 
     values.push_back(20);
     numbers.push_back(3);
